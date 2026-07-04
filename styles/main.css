@@ -1,0 +1,8 @@
+/*
+  Punto de entrada principal de estilos.
+  Objetivo: centralizar la carga mediante imports para facilitar mantenimiento y escalabilidad.
+*/
+
+@import url("./base/background.css");
+@import url("./base/typography.css");
+
