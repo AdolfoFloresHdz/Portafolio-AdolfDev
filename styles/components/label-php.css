@@ -1,0 +1,86 @@
+/*
+  Componente visual del placeholder de tecnología “PHP”.
+  Objetivo: estilo tipo chip/label para integrarlo en un layout (grid en el futuro) sin introducir componentes adicionales.
+
+  Requisito del proyecto:
+  - El HTML ya contiene un label con contenido dinámico mediante JS.
+  - Este CSS SOLO diseña el label con id="label-php".
+*/
+
+/* Contenedor del label (se aplica sobre el elemento existente en el index) */
+/*
+  Estilos del componente label-php.
+  Objetivo visual:
+  - Mantener borde blanco y estética tecnológica.
+  - Preparar un contenedor estable para que texto y logo “se transformen” sin recorte.
+  - Usar tipografía Sorgath (si existe en el proyecto) como prioridad visual.
+*/
+
+#label-php{
+  /* Color base para el texto */
+  color: #51A4B0;
+
+  /* Borde blanco requerido */
+  border: 2px solid #ffffff;
+
+  /* Forma tipo chip */
+  border-radius: 10px;
+
+  /* Espaciado interno */
+  padding: 8px 12px;
+
+  /* Tipografía (Sorgath si está disponible) */
+  font-family: "Sorgath", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: .08em;
+
+  /* Evita saltos visuales por cambios de line-height */
+  line-height: 1.1;
+
+  /* Centrado: texto o logo deben permanecer centrados */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Medidas fijas para estabilidad del layout */
+  width: 110px;
+  height: 44px;
+
+  /* Evita que se rompa la línea */
+  white-space: nowrap;
+
+  /* Fondo tecnológico discreto */
+  background: rgba(255, 255, 255, 0.02);
+
+  /* Preparación para transformaciones (JS coordina la animación) */
+  box-sizing: border-box;
+
+  /* Optimiza el render de transform/opacity */
+  will-change: transform, opacity;
+
+  /* Estado inicial compatible con JS */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Estado interno: imagen del logo */
+#label-php img{
+  /* Logo debe ocupar gran parte del espacio interno */
+  width: 96px;
+  height: 40px;
+
+  /* No deformar y no recortar */
+  object-fit: contain;
+  display: block;
+
+  /* Centrado por seguridad */
+  margin: 0 auto;
+}
+
+/* Tamaño del texto (cuando el JS lo inserta) */
+#label-php{
+  font-size: 16px;
+}
+
+
+

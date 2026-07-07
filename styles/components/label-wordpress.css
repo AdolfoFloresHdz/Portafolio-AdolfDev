@@ -1,0 +1,66 @@
+/*
+  Componente visual del placeholder de tecnología “WORDPRESS”.
+  Objetivo:
+  - Mismo estilo “chip” tecnológico que PHP.
+  - Contenedor estable para animación: texto ↔ logo.
+*/
+
+#label-wordpress{
+  /* Color base */
+  color: #51A4B0;
+
+  /* Borde blanco requerido */
+  border: 2px solid #ffffff;
+
+  /* Forma tipo etiqueta */
+  border-radius: 10px;
+
+  /* Espaciado interno */
+  padding: 8px 12px;
+
+  /* Tipografía prioriza Sorgath si está disponible */
+  font-family: "Sorgath", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: .08em;
+
+  /* Evita cambios de layout por line-height */
+  line-height: 1.1;
+
+  /* Layout centrado */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Dimensiones fijas para estabilidad visual */
+  width: 110px;
+  height: 44px;
+
+  /* Evita que el chip crezca */
+  white-space: nowrap;
+
+  /* Fondo translúcido para integrarse con el fondo oscuro */
+  background: rgba(255, 255, 255, 0.02);
+
+  /* Asegura el box-sizing consistente */
+  box-sizing: border-box;
+
+  /* Preparación para animación sincronizada con JS */
+  will-change: transform, opacity;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#label-wordpress img{
+  /* Logo sin deformación y con buena presencia */
+  width: 96px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+#label-wordpress{
+  /* Mantiene el área tipográfica estable */
+  font-size: 16px;
+}
+
