@@ -3,6 +3,11 @@
   Objetivo: centralizar la carga mediante imports para facilitar mantenimiento y escalabilidad.
 */
 
+@import url("./base/variables.css");
 @import url("./base/background.css");
 @import url("./base/typography.css");
+@import url("./base/layout.css");
+@import url("./base/identity.css");
+
+
 

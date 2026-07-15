@@ -1,17 +1,20 @@
 /*
-  Componente JS: animación “paneo” del label de WORDPRESS.
+  Componente JS: animación “paneo” del label de MySQL.
 
   Objetivo:
-  - Alternar entre texto “WORDPRESS” e imagen.
-  - Aplicar la misma lógica robusta que se usó en PHP.
+  - Alternar entre texto “MYSQL” e imagen (MySQL-Dark.svg).
+  - Aplicar la misma lógica robusta que se usó en PHP/PYTHON/FASTAPI/JWT.
+
+  Requisito:
+  - El elemento existe en el HTML con id="label-mysql".
 */
 
 (() => {
-  const label = document.getElementById('label-wordpress');
+  const label = document.getElementById('label-mysql');
   if (!label) return;
 
-  const imgSrc = 'images/lenguajes/wordpress.svg';
-  const textValue = 'WORDPRESS';
+  const imgSrc = 'images/lenguajes/MySQL-Dark.svg';
+  const textValue = 'MYSQL';
 
   const staticTextMs = 10000;
   const staticLogoMs = 10000;
@@ -31,7 +34,7 @@
 
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.alt = 'WORDPRESS';
+    img.alt = 'MYSQL';
     img.loading = 'eager';
 
     link.appendChild(img);

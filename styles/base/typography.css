@@ -1,23 +1,26 @@
 /*
   Tipografía base del proyecto.
-  Objetivo: legibilidad y jerarquía clara para títulos, subtítulos y párrafos.
-  Evita fuentes arcade/pixeladas/decorativas; se prioriza un look “engineering/backend”.
+
+  Objetivo:
+  - Jerarquías claras para títulos, subtítulos y párrafos.
+  - Legibilidad y profesionalismo sobre fondo oscuro.
+  - Evitar fuentes arcade/pixeladas/decorativas como principal.
 */
 
 /* Ajustes globales de tipografía */
 body{
-  /* Sistema de fuentes: prioriza UI sans-serif en lugar de fuentes decorativas */
+  /* Sistema de fuentes pro-legibilidad */
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-  /* Fluidez de lectura */
+  /* Lectura cómoda */
   line-height: 1.6;
 
-  /* Mejora de renderizado en navegadores compatibles */
+  /* Mejor renderizado en navegadores compatibles */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Títulos principales: impacto visual, sin exagerar */
+/* Título principal */
 h1{
   position:relative;
   z-index:1;
@@ -30,7 +33,7 @@ h1{
   letter-spacing: .2px;
 }
 
-/* Jerarquía adicional (lista para cuando existan secciones) */
+/* Subtítulo */
 h2{
   margin: 0;
   padding: 0;
@@ -41,6 +44,7 @@ h2{
   line-height: 1.3;
 }
 
+/* Tercer nivel */
 h3{
   margin: 0;
   padding: 0;
@@ -51,7 +55,7 @@ h3{
   line-height: 1.35;
 }
 
-/* Párrafos: legibles sobre fondo oscuro */
+/* Párrafos */
 p{
   margin: 0;
   padding: 0;

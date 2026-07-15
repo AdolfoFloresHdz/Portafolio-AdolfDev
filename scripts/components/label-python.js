@@ -2,28 +2,20 @@
   Componente JS: animación “paneo” del label de PYTHON.
 
   Objetivo:
-  - Cada 10 segundos alternar entre texto “PYTHON” e imagen.
-  - Mantener el mismo elemento (no agrega contenedores fuera del label).
+  - Alternar entre texto “PYTHON” e imagen.
+  - Aplicar la misma lógica robusta que se usó en PHP.
 */
 
 (() => {
   const label = document.getElementById('label-python');
   if (!label) return;
 
-  // Imagen (logo) para la transformación
-  const imgSrc = 'images/lenguajes/python.png';
+  const imgSrc = 'images/lenguajes/Python-Dark.svg';
   const textValue = 'PYTHON';
-  let showImage = false;
 
-  // Temporización dinámica (igual patrón que PHP, sin 10s)
-  const textVisibleMs = 4000;
-  const logoVisibleMs = 4000;
-  const transitionMs = 600;
+  const staticTextMs = 10000;
+  const staticLogoMs = 10000;
 
-  // Sensación tecnológica: desplazamiento lateral
-  const shiftPx = 14;
-
-  // Construcción del contenido
   const setContentText = () => {
     label.textContent = textValue;
   };
@@ -31,64 +23,54 @@
   const setContentImage = () => {
     label.textContent = '';
 
+    // Crear un enlace invisible (solo navegación al tocar/click en la imagen)
+    const link = document.createElement('a');
+    link.href = 'https://skillicons.dev/';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+
     const img = document.createElement('img');
     img.src = imgSrc;
     img.alt = 'PYTHON';
     img.loading = 'eager';
 
-    label.appendChild(img);
+    link.appendChild(img);
+    label.appendChild(link);
   };
 
-  // Texto sale + Logo entra
-  const textToLogo = () => {
-    label.style.opacity = '0';
-    label.style.transform = `translateX(${ -shiftPx }px)`;
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    label.style.filter = 'saturate(1.05)';
-    label.style.letterSpacing = '.16em';
+  // Reproduce la animación, ejecuta el swap al terminar, y LIMPIA la clase
+  const playTransition = (swapFn) =>
+    new Promise((resolve) => {
+      const onEnd = () => {
+        label.removeEventListener('animationend', onEnd);
+        swapFn();
+        label.classList.remove('blur-out-contract');
+        resolve();
+      };
 
-    setTimeout(() => {
-      setContentImage();
-      label.style.opacity = '1';
-      label.style.transform = 'translateX(0)';
-      label.style.filter = 'none';
-      label.style.letterSpacing = '.08em';
-      showImage = true;
-    }, transitionMs);
+      label.addEventListener('animationend', onEnd);
+
+      label.classList.remove('blur-out-contract');
+      void label.offsetWidth; // fuerza reflow para reiniciar animación
+      label.classList.add('blur-out-contract');
+    });
+
+  const loop = async () => {
+    setContentText();
+    await wait(staticTextMs);
+
+    await playTransition(setContentImage);
+
+    await wait(staticLogoMs);
+
+    await playTransition(setContentText);
+
+    loop();
   };
 
-  // Logo sale + Texto entra
-  const logoToText = () => {
-    label.style.opacity = '0';
-    label.style.transform = `translateX(${ shiftPx }px)`;
-
-    label.style.filter = 'saturate(1.05)';
-
-    setTimeout(() => {
-      setContentText();
-      label.style.opacity = '1';
-      label.style.transform = 'translateX(0)';
-      label.style.filter = 'none';
-      showImage = false;
-    }, transitionMs);
-  };
-
-  // Inicial: texto
   setContentText();
-  label.style.opacity = '1';
-  label.style.transform = 'translateX(0)';
-
-  // Ciclo infinito con temporización dinámica
-  const cycle = async () => {
-    while (true) {
-      await new Promise((r) => setTimeout(r, textVisibleMs));
-      if (!showImage) textToLogo();
-
-      await new Promise((r) => setTimeout(r, logoVisibleMs));
-      if (showImage) logoToText();
-    }
-  };
-
-  cycle();
+  loop();
 })();
 

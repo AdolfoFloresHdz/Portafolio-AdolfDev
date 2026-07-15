@@ -1,17 +1,20 @@
 /*
-  Componente JS: animación “paneo” del label de WORDPRESS.
+  Componente JS: animación “paneo” del label de JWT.
 
   Objetivo:
-  - Alternar entre texto “WORDPRESS” e imagen.
-  - Aplicar la misma lógica robusta que se usó en PHP.
+  - Alternar entre texto “JWT” e imagen (jwt.png).
+  - Aplicar la misma lógica robusta que se usó en PHP/PYTHON.
+
+  Requisito:
+  - El elemento existe en el HTML con id="label-jwt".
 */
 
 (() => {
-  const label = document.getElementById('label-wordpress');
+  const label = document.getElementById('label-jwt');
   if (!label) return;
 
-  const imgSrc = 'images/lenguajes/wordpress.svg';
-  const textValue = 'WORDPRESS';
+  const imgSrc = 'images/lenguajes/jwt.png';
+  const textValue = 'JWT';
 
   const staticTextMs = 10000;
   const staticLogoMs = 10000;
@@ -25,13 +28,13 @@
 
     // Crear un enlace invisible (solo navegación al tocar/click en la imagen)
     const link = document.createElement('a');
-    link.href = 'https://skillicons.dev/';
+    link.href = 'https://www.flaticon.es/';
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
 
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.alt = 'WORDPRESS';
+    img.alt = 'JWT';
     img.loading = 'eager';
 
     link.appendChild(img);

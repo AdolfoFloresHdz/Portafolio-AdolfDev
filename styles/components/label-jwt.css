@@ -1,11 +1,11 @@
 /*
-  Componente visual del placeholder de tecnología “PYTHON”.
+  Componente visual del placeholder de tecnología “JWT”.
   Objetivo:
-  - Mismo estilo “chip” tecnológico que PHP.
-  - Contenedor estable para animación: texto ↔ logo.
+  - Mismo estilo “chip” tecnológico que PHP/PYTHON.
+  - Contenedor estable para la animación texto ↔ imagen.
 */
 
-#label-python{
+#label-jwt{
   /* Color base */
   color: #51A4B0;
 
@@ -23,7 +23,7 @@
   /* Espaciado interno */
   padding: 8px 12px;
 
-  /* Tipografía prioriza Sorgath si está disponible */
+  /* Tipografía */
   font-family: "Sorgath", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 800;
   letter-spacing: .08em;
@@ -31,22 +31,18 @@
   /* Evita cambios de layout por line-height */
   line-height: 1.1;
 
-  /* Layout centrado */
+  /* Centrado */
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  /* Dimensiones fijas para estabilidad visual */
+  /* Dimensiones fijas */
   width: 110px;
   height: 44px;
 
-  /* Evita que el chip crezca */
+  /* Estabilidad */
   white-space: nowrap;
-
-  /* Fondo translúcido para integrarse con el fondo oscuro */
   background: rgba(255, 255, 255, 0.02);
-
-  /* Asegura el box-sizing consistente */
   box-sizing: border-box;
 
   /* Preparación para animación sincronizada con JS */
@@ -55,8 +51,8 @@
   transform: translateX(0);
 }
 
-#label-python img{
-  /* Logo sin deformación y con buena presencia */
+/* Logo interno del chip */
+#label-jwt img{
   width: 110px;
   height: 50px;
   object-fit: contain;
@@ -64,8 +60,7 @@
   margin: 0 auto;
 }
 
-#label-python{
-  /* Mantiene el área tipográfica estable */
+#label-jwt{
   font-size: 16px;
 }
 

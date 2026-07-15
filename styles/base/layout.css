@@ -1,0 +1,92 @@
+/*
+  Layout base (grid + contenedores).
+
+  Objetivo visual:
+  - Usar únicamente 2 columnas (izquierda: identidad, derecha: presentación).
+  - Mantener una estructura fácil de entender y escalar.
+  - No introduce componentes extra; solo posiciona el contenido existente.
+*/
+
+/* Elementos de página */
+main{
+  /* Asegura un “canvas” legible sobre el fondo */
+  min-height: 100vh;
+
+  /* Centrado del contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor 2x1 */
+#quien-soy{
+  /* Estructura tipo grid con 2 columnas */
+  width: min(1100px, 100%);
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.4fr;
+
+  gap: 32px;
+
+  /* Estructura ordenada */
+  align-items: start;
+}
+
+/* Cada “mitad” ya existe como <div> en el HTML */
+#quien-soy > div{
+  /* Posicionamiento interno cómodo */
+  padding: 18px;
+  box-sizing: border-box;
+
+  /* Fondo translúcido para mejorar legibilidad sin robar protagonismo al fondo */
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+}
+
+/* Mejora de consistencia: título y subtítulos en la columna derecha */
+#quien-soy h1{
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+#quien-soy h3{
+  padding: 0;
+  margin: 0 0 6px 0;
+}
+
+#quien-soy h4{
+  margin: 0 0 18px 0;
+}
+
+/* Columna izquierda: reduce el espaciado de los párrafos/labels existentes */
+#quien-soy > div:first-child p,
+#quien-soy > div:first-child label{
+  margin-bottom: 10px;
+}
+
+/* Contenedor de “links” a la izquierda (el <p> que contiene labels) */
+#quien-soy > div:first-child > p{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Los labels de la izquierda deben mantener una sola línea */
+#quien-soy > div:first-child > p > label{
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+
+/* Responsivo: en pantallas pequeñas se apila */
+@media (max-width: 900px){
+  #quien-soy{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+

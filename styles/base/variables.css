@@ -1,0 +1,15 @@
+:root{
+  /* Fondo general oscuro: estética profesional tipo ingeniería */
+  --bg:#050812;
+
+  /* Líneas para la cuadrícula tipo circuito (sutiles, no intrusivas) */
+  --line: rgba(43, 213, 255, .16);
+  --line2: rgba(124, 92, 255, .12);
+
+  /* Color de nodos: halos discretos para mantener legibilidad */
+  --node: rgba(47,228,255,.55);
+
+  /* Color base de texto */
+  --text:#cfefff;
+}
+

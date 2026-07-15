@@ -1,17 +1,20 @@
 /*
-  Componente JS: animación “paneo” del label de WORDPRESS.
+  Componente JS: animación “paneo” del label de FASTAPI.
 
   Objetivo:
-  - Alternar entre texto “WORDPRESS” e imagen.
-  - Aplicar la misma lógica robusta que se usó en PHP.
+  - Alternar entre texto “FASTAPI” e imagen (fast-api.png).
+  - Aplicar la misma lógica robusta que se usó en PHP/PYTHON.
+
+  Requisito:
+  - El elemento existe en el HTML con id="label-fastapi".
 */
 
 (() => {
-  const label = document.getElementById('label-wordpress');
+  const label = document.getElementById('label-fastapi');
   if (!label) return;
 
-  const imgSrc = 'images/lenguajes/wordpress.svg';
-  const textValue = 'WORDPRESS';
+  const imgSrc = 'images/lenguajes/FastApi.svg';
+  const textValue = 'FASTAPI';
 
   const staticTextMs = 10000;
   const staticLogoMs = 10000;
@@ -31,7 +34,7 @@
 
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.alt = 'WORDPRESS';
+    img.alt = 'FASTAPI';
     img.loading = 'eager';
 
     link.appendChild(img);

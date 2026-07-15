@@ -1,23 +1,17 @@
-:root{
-  /* Fondo general oscuro: estética profesional tipo ingeniería */
-  --bg:#050812;
+/*
+  Fondo tecnológico del proyecto (circuitos + nodos).
 
-  /* Líneas para la cuadrícula tipo circuito (sutiles, no intrusivas) */
-  --line: rgba(43, 213, 255, .16);
-  --line2: rgba(124, 92, 255, .12);
-
-  /* Color de nodos: halos muy discretos para mantener legibilidad */
-  --node: rgba(47,228,255,.55);
-
-  /* Color de texto (definido aquí para reutilización consistente) */
-  --text:#cfefff;
-}
+  Objetivo visual:
+  - Estética oscura profesional, orientada a ingeniería.
+  - Patrón sutil: cuadrícula con “líneas” y halos de nodos.
+  - Evitar efectos exagerados que compitan con el contenido.
+*/
 
 /* Estructura mínima del documento para que el fondo ocupe toda la pantalla */
 html,body{height:100%}
 
 body{
-  /* Reset básico de márgenes para evitar desplazamientos inesperados */
+  /* Reset básico */
   margin:0;
 
   /* Color base y contraste */
@@ -30,13 +24,13 @@ body{
     linear-gradient(to right, var(--line) 1px, transparent 1px),
     /* Cuadrícula vertical */
     linear-gradient(to bottom, var(--line) 1px, transparent 1px),
-    /* Nodos/halos discretos (posición fija con repetición) */
+    /* Nodos/halos discretos (ubicaciones fijas con repetición) */
     radial-gradient(circle at 15% 25%, rgba(47,228,255,.22) 0 2px, transparent 3px),
     radial-gradient(circle at 68% 18%, rgba(124,92,255,.18) 0 2px, transparent 3px),
     radial-gradient(circle at 40% 62%, rgba(47,228,255,.18) 0 2px, transparent 3px),
     radial-gradient(circle at 82% 70%, rgba(47,228,255,.15) 0 2px, transparent 3px);
 
-  /* Tamaño de la cuadrícula */
+  /* Tamaño del patrón de cuadrícula */
   background-size:
     42px 42px,
     42px 42px,
@@ -45,7 +39,7 @@ body{
     auto,
     auto;
 
-  /* Posición de cada capa de fondo */
+  /* Alineación */
   background-position:
     0 0,
     0 0,
@@ -54,31 +48,29 @@ body{
     0 0,
     0 0;
 
-  /* Control de overflow: evita barras por detalles del patrón de fondo */
+  /* Evita barras por overflow horizontal (detalle del patrón) */
   overflow-x:hidden;
 }
 
-/* Capa adicional horizontal para sensación de “banda de señal” (muy sutil) */
+/* Banda horizontal sutil para sensación de “señal” */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
 
-  /* Línea fina horizontal centrada para profundidad sin competir con el contenido */
   background-image:
     linear-gradient(to bottom, transparent 0 55%, var(--line2) 56% 56%, transparent 57% 100%);
   opacity:.6;
 }
 
-/* Capa fija con nodos discretos adicionales (patrón repetitivo) */
+/* Capa fija con nodos discretos adicionales */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
 
-  /* Distribución fija de nodos: ligera variedad cromática */
   background-image:
     radial-gradient(circle at 10% 30%, var(--node) 0 1.5px, transparent 2px),
     radial-gradient(circle at 32% 58%, var(--node) 0 1.5px, transparent 2px),
