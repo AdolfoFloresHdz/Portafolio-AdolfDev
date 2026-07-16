@@ -1,0 +1,70 @@
+/*
+  Estilos base para labels estáticos de redes sociales.
+  Objetivo:
+  - Mostrar únicamente iconos (imagen) para Gmail, GitHub y LinkedIn.
+  - Mantener consistencia visual con la estética tecnológica actual.
+  - Evitar texto (solo se conserva texto en WhatsApp mientras el icono no exista).
+*/
+
+/* Contenedor del label de red social */
+#label-github,
+#label-gmail,
+#label-linkedin,
+#label-whatsapp{
+  /* Iconos centrados y con dimensiones estables */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+
+  /* Estética de ingeniería: borde sutil */
+  border: 1px solid rgba(34, 211, 238, 0.18);
+
+  box-sizing: border-box;
+
+  /* Evita saltos si la imagen aún no carga */
+  overflow: hidden;
+}
+
+/* Icono SVG/imagen */
+#label-github img,
+#label-gmail img,
+#label-linkedin img{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+/* WhatsApp por ahora se queda como texto (aún no se añadirá imagen) */
+#label-whatsapp{
+  /* Mismo estilo base que los labels con imagen */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* WhatsApp: ajustar imagen para que no se vea recortada y mantenga escala similar */
+#label-whatsapp img{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+

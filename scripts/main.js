@@ -7,7 +7,5 @@ import './components/label-wordpress.js';
 import './components/label-python.js';
 import './components/label-fastapi.js';
 import './components/label-jwt.js';
-
-
-
-
+import './components/label-mysql.js';
+import './components/desarrollador-Back.js'; // Animación del texto “// Desarrollador Backend //”.   

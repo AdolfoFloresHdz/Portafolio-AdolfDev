@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="styles/components/label-fastapi.css" />
   <link rel="stylesheet" href="styles/components/label-jwt.css" />
   <link rel="stylesheet" href="styles/components/label-mysql.css" />
+  <link rel="stylesheet" href="styles/components/label-fotoperfil.css" />
   <link rel="stylesheet" href="styles/components/animatiss.css" />
+  <link rel="stylesheet" href="styles/components/label-redes-sociales.css" />
+  <script type="module" src="scripts/components/desarrollador-Back.js"></script>
+
   <script type="module" src="scripts/main.js"></script>
   <script type="module" src="scripts/components/label-mysql.js"></script>
 
@@ -23,22 +27,34 @@
       <div>
         <div>
           <p><h4>Adolfo Flores H.</h4></p>
-          <label>Foto</label>
-          <p>adolf.dev</p>
+          <p>
+            <label class="avatar_imput__label" for="avatar-imput">adolf.dev</label>
+            <input id="avatar-imput" class="avatar_imput__input" type="file" accept="image/*" />
+          </p>
         </div>
         <p>
-          <label>Linkelind</label>
-          <label>GitHub</label>
-          <label>Whatsapp</label>
-          <label>Gmail</label>
+          <label id="label-linkedin" aria-label="LinkedIn">
+            <img alt="LinkedIn" src="images/redes-sociales/LinkedIn.svg" />
+          </label>
+          <label id="label-github" aria-label="GitHub">
+            <img alt="GitHub" src="images/redes-sociales/Github-Dark.svg" />
+          </label>
+          <label id="label-whatsapp" aria-label="Whatsapp">
+            <img alt="Whatsapp" src="images/redes-sociales/whatsapp.svg" />
+          </label>
+
+          <label id="label-gmail" aria-label="Gmail">
+            <img alt="Gmail" src="images/redes-sociales/Gmail-Dark.svg" />
+          </label>
+          
         </p>
+
       </div>
 
       <div>
         <h1>{ QUIEN SOY: }</h1>
         <h3>Adolfo Flores Hernández</h3>
-        <h4> // Desarrollador Backend //</h4>
-        
+        <h4 id="desarrollador-back"> // Desarrollador Backend //</h4>
         <p>
           <label id="label-php">PHP</label>
           <label id="label-wordpress">WORDPRESS</label>
