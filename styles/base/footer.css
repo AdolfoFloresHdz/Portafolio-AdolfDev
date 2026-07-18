@@ -1,0 +1,43 @@
+/*
+  Footer base del proyecto.
+
+  Objetivo visual:
+  - Mantener el footer sutil y profesional.
+  - Estética oscura con borde superior discreto (tipo ingeniería/backend).
+  - Flexbox para distribuir texto a izquierda/derecha.
+
+  Restricción de fase:
+  - No crear componentes/funcionalidades nuevas; solo estilo visual.
+*/
+
+/* Contenedor principal del footer */
+footer{
+  /* Fondo oscuro igual a la identidad visual */
+  background:#060a10;
+
+  /* Espaciado compacto */
+  padding:10px 24px;
+
+  /* Separación sutil del contenido superior */
+  border-top:1px solid rgba(34,211,238,0.06);
+
+  /* Layout para distribución de textos */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  /* Evitar problemas con márgenes por defecto */
+  box-sizing:border-box;
+}
+
+/* Texto dentro del footer */
+footer span{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+ 
+
+  /* Color con mejor contraste para que no se “pierda” sobre el fondo oscuro */
+  color:#6ee7ff;
+}
+
+
