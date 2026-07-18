@@ -1,0 +1,63 @@
+/*
+  Componente visual: botón tipo icono para “Descargar CV”.
+
+  Objetivo visual:
+  - Sustituir el botón rectangular por un elemento circular discreto.
+  - Colocar texto debajo: “Descargar” y “CV” en dos líneas.
+  - Mantener estética oscura, profesional y orientada a ingeniería.
+
+  Nota de fase:
+  - No incluye funcionalidades de descarga; solo estructura visual.
+*/
+
+/* Contenedor del label (se usa como botón sin JS por ahora) */
+#cv-download{
+  /* Para que el layout use el mismo comportamiento que los labels existentes */
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Empuje hacia abajo dentro de la columna izquierda */
+  width: 100%;
+  margin-top: auto;
+
+  /* Estética de “control” */
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Círculo con el icono */
+#cv-download > span[aria-hidden="true"]{
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(34,211,238,0.45);
+  background: rgba(34,211,238,0.06);
+
+  /* Icono centrado y con peso visual */
+  color: #22d3ee;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Texto debajo (2 líneas) */
+#cv-download .cv-download__text{
+  font-family: 'JetBrains Mono', monospace;
+  color: #22d3ee;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+
+  margin-top: 6px;
+}
+
+/* Espaciado extra entre líneas sin “efectos” */
+#cv-download .cv-download__text + .cv-download__text{
+  margin-top: 2px;
+}
+
